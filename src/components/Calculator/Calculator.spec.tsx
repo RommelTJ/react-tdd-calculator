@@ -6,7 +6,7 @@ import Display from '../Display/Display';
 import Keypad from '../Keypad/Keypad';
 
 describe('Calculator', () => {
-  let wrapper: ShallowWrapper;
+  let wrapper: ShallowWrapper<Calculator>;
 
   beforeEach(() => wrapper = shallow(<Calculator />));
 
@@ -15,14 +15,15 @@ describe('Calculator', () => {
   });
 
   it('should render the Display and Keypad Components', () => {
+    const calculatorInstance = wrapper.instance() as Calculator;
     expect(wrapper.containsAllMatchingElements([
-      <Display displayValue={wrapper.instance().state.displayValue} />,
+      <Display displayValue={calculatorInstance.state.displayValue} />,
       <Keypad
-        callOperator={wrapper.instance().callOperator}
-        numbers={wrapper.instance().state.numbers}
-        operators={wrapper.instance().state.operators}
-        setOperator={wrapper.instance().setOperator}
-        updateDisplay={wrapper.instance().updateDisplay}
+        callOperator={calculatorInstance.callOperator}
+        numbers={calculatorInstance.state.numbers}
+        operators={calculatorInstance.state.operators}
+        setOperator={calculatorInstance.setOperator}
+        updateDisplay={calculatorInstance.updateDisplay}
       />
     ])).toEqual(true);
   });
