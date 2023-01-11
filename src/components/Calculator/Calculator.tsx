@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Calculator.css';
+
 class Calculator extends Component {
   state = {
     // value to be displayed in <Display />
