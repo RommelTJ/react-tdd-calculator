@@ -30,6 +30,13 @@ Test-Driven Development (`TDD`) is a development method that utilizes repetition
 * Testing edge cases is hard
 * Mocking, faking, and stubbing are all even harder
 
+## Types of Tests
+
+* Shallow Rendering Tests
+  * Useful to keep yourself constrained to testing the component as a unit 
+  * Avoids indirectly testing the behavior of child components
+  * https://enzymejs.github.io/enzyme/docs/api/shallow.html
+
 
 ## Available Scripts
 
