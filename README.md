@@ -36,7 +36,12 @@ Test-Driven Development (`TDD`) is a development method that utilizes repetition
   * Useful to keep yourself constrained to testing the component as a unit 
   * Avoids indirectly testing the behavior of child components
   * https://enzymejs.github.io/enzyme/docs/api/shallow.html
-
+* Snapshot Testing
+  * Although snapshots are not part of TDD as they are written after a component has been written 
+  * Think "green-green-refactor" instead of "red-green-refactor"
+  * They are worth including since they will quickly alert you of any unexpected changes to a rendered component. 
+  * It's best to add them after you've finished the writing of the component.
+  * You'll need to use a snapshot serializer for Jest version 24 or greater.
 
 ## Available Scripts
 
