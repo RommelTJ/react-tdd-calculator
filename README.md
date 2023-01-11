@@ -4,6 +4,45 @@ A calculator built using Test-Driven Development.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## What is Test-Driven Development?
+
+Test-Driven Development (`TDD`) is a development method that utilizes repetition of a short development cycle called 
+`Red-Green-Refactor`.
+
+### Process
+
+1. Add a test
+2. Run all tests and see if the new test fails (red)
+3. Write the code to pass the test (green)
+4. Run all tests
+5. Refactor
+6. Repeat
+
+#### Pros
+
+* Design before implementation
+* Helps prevent future regressions and bugs
+* Increases confidence that the code works as expected
+
+#### Cons
+
+* Takes longer to develop (but it can save time in the long run)
+* Testing edge cases is hard
+* Mocking, faking, and stubbing are all even harder
+
+## Types of Tests
+
+* Shallow Rendering Tests
+  * Useful to keep yourself constrained to testing the component as a unit 
+  * Avoids indirectly testing the behavior of child components
+  * https://enzymejs.github.io/enzyme/docs/api/shallow.html
+* Snapshot Testing
+  * Although snapshots are not part of TDD as they are written after a component has been written 
+  * Think "green-green-refactor" instead of "red-green-refactor"
+  * They are worth including since they will quickly alert you of any unexpected changes to a rendered component. 
+  * It's best to add them after you've finished the writing of the component.
+  * You'll need to use a snapshot serializer for Jest version 24 or greater.
+
 ## Available Scripts
 
 In the project directory, you can run:
