@@ -4,6 +4,33 @@ A calculator built using Test-Driven Development.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## What is Test-Driven Development?
+
+Test-Driven Development (`TDD`) is a development method that utilizes repetition of a short development cycle called 
+`Red-Green-Refactor`.
+
+### Process
+
+1. Add a test
+2. Run all tests and see if the new test fails (red)
+3. Write the code to pass the test (green)
+4. Run all tests
+5. Refactor
+6. Repeat
+
+#### Pros
+
+* Design before implementation
+* Helps prevent future regressions and bugs
+* Increases confidence that the code works as expected
+
+#### Cons
+
+* Takes longer to develop (but it can save time in the long run)
+* Testing edge cases is hard
+* Mocking, faking, and stubbing are all even harder
+
+
 ## Available Scripts
 
 In the project directory, you can run:
