@@ -4,6 +4,19 @@ import { render, screen } from '@testing-library/react'
 import Keypad from './Keypad';
 
 describe('Keypad', () => {
+  it("should render correctly", () => {
+    const keypadResult = render(
+      <Keypad
+        callOperator={jest.fn()}
+        numbers={[]}
+        operators={[]}
+        setOperator={jest.fn()}
+        updateDisplay={jest.fn()}
+      />
+    );
+    expect(keypadResult).toMatchSnapshot();
+  });
+
   it('should render a Keypad', () => {
     render(
       <Keypad
