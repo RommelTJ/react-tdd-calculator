@@ -26,10 +26,172 @@ Object {
         >
           <div
             class="numbers-container"
-          />
+          >
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                9
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                8
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                7
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                6
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                5
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                4
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                3
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                2
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                1
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                .
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                0
+              </p>
+            </div>
+            <div
+              class="key-container number-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                ce
+              </p>
+            </div>
+          </div>
           <div
             class="operators-container"
-          />
+          >
+            <div
+              class="key-container operator-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                /
+              </p>
+            </div>
+            <div
+              class="key-container operator-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                x
+              </p>
+            </div>
+            <div
+              class="key-container operator-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                -
+              </p>
+            </div>
+            <div
+              class="key-container operator-key"
+              role="key"
+            >
+              <p
+                class="key-value"
+              >
+                +
+              </p>
+            </div>
+          </div>
           <div
             class="submit-container"
           >
@@ -70,10 +232,172 @@ Object {
       >
         <div
           class="numbers-container"
-        />
+        >
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              9
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              8
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              7
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              6
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              5
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              4
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              3
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              2
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              1
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              .
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              0
+            </p>
+          </div>
+          <div
+            class="key-container number-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              ce
+            </p>
+          </div>
+        </div>
         <div
           class="operators-container"
-        />
+        >
+          <div
+            class="key-container operator-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              /
+            </p>
+          </div>
+          <div
+            class="key-container operator-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              x
+            </p>
+          </div>
+          <div
+            class="key-container operator-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              -
+            </p>
+          </div>
+          <div
+            class="key-container operator-key"
+            role="key"
+          >
+            <p
+              class="key-value"
+            >
+              +
+            </p>
+          </div>
+        </div>
         <div
           class="submit-container"
         >
