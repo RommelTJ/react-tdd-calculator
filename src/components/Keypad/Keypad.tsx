@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Keypad.css';
+
 type Props = {
   callOperator: () => void;
   numbers: number[];
