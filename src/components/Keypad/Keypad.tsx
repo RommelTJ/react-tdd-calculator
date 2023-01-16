@@ -5,7 +5,7 @@ import Key from "../Key/Key";
 
 type Props = {
   callOperator: () => void;
-  numbers: number[];
+  numbers: string[];
   operators: string[];
   setOperator: () => void;
   updateDisplay: () => void;
@@ -15,7 +15,7 @@ const Keypad = (props: Props) => {
   const { callOperator, numbers, operators, setOperator, updateDisplay } = props;
 
   const numberKeys = numbers.map(number => {
-    return <Key key={number} keyAction={updateDisplay} keyType="number-key" keyValue={number.toString()}/>;
+    return <Key key={number} keyAction={updateDisplay} keyType="number-key" keyValue={number}/>;
   });
 
   const operatorKeys = operators.map(operator => {

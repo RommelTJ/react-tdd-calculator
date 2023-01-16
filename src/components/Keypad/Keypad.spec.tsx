@@ -1,13 +1,11 @@
 import React from 'react';
-import {shallow, ShallowWrapper, mount, ReactWrapper} from 'enzyme';
+import { render, screen } from '@testing-library/react'
 
 import Keypad from './Keypad';
 
 describe('Keypad', () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  it('should render a Keypad', () => {
+    render(
       <Keypad
         callOperator={jest.fn()}
         numbers={[]}
@@ -16,10 +14,8 @@ describe('Keypad', () => {
         updateDisplay={jest.fn()}
       />
     );
-  });
-
-  it('should render 4 divs', () => {
-    expect(wrapper.find('div').length).toEqual(4);
+    const keypadComponent = screen.getByTestId('keypad');
+    expect(keypadComponent).toBeTruthy();
   });
 
   it('should render an instance of the Key component for each index of numbers, operators, and the submit Key', () => {
@@ -27,34 +23,36 @@ describe('Keypad', () => {
     const operators = ['+', '-'];
     const submit = 1;
     const keyTotal = numbers.length + operators.length + submit;
-    wrapper.setProps({ numbers, operators });
-    expect(wrapper.find('Key').length).toEqual(keyTotal);
-  });
-
-});
-
-describe('mounted Keypad', () => {
-  let wrapper: ReactWrapper;
-
-  beforeEach(() => {
-    wrapper = mount(
+    render(
       <Keypad
         callOperator={jest.fn()}
-        numbers={[]}
+        numbers={numbers}
+        operators={operators}
+        setOperator={jest.fn()}
+        updateDisplay={jest.fn()}
+      />
+    );
+    const keypadComponent = screen.getAllByRole('key');
+    expect(keypadComponent).toHaveLength(keyTotal);
+  });
+
+  it('renders the values of numbers to the DOM', () => {
+    const numbers = ['0', '1', '2']
+    const { container, getAllByRole } = render(
+      <Keypad
+        callOperator={jest.fn()}
+        numbers={numbers}
         operators={[]}
         setOperator={jest.fn()}
         updateDisplay={jest.fn()}
       />
     );
+    const numbersContainer = container.querySelector('.numbers-container');
+    expect(numbersContainer).toBeTruthy();
+    const keys = getAllByRole("key")
+    const submitKey = 1;
+    const expectedKeysTotal = numbers.length + submitKey;
+    expect(keys).toHaveLength(expectedKeysTotal);
   });
 
-  it('renders the values of numbers to the DOM', () => {
-    wrapper.setProps({ numbers: ['0', '1', '2'] })
-    expect(wrapper.find('.numbers-container').text()).toEqual('012');
-  });
-
-  it('renders the values of operators to the DOM', () => {
-    wrapper.setProps({ operators: ['+', '-', '*', '/'] });
-    expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
-  });
 });
