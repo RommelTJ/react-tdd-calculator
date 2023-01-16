@@ -23,7 +23,7 @@ const Keypad = (props: Props) => {
   });
 
   return (
-    <div className="keypad-container">
+    <div data-testid="keypad" className="keypad-container">
       <div className="numbers-container">{numberKeys}</div>
       <div className="operators-container">{operatorKeys}</div>
       <div className="submit-container">

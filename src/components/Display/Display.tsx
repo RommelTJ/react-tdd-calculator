@@ -9,7 +9,7 @@ type Props = {
 const Display = (props: Props) => {
   const { displayValue = '' } = props;
   return (
-    <div className="display-container">
+    <div data-testid="display" className="display-container">
       <p className="display-value">
         {displayValue}
       </p>

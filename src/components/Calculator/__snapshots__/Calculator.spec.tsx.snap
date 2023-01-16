@@ -35,7 +35,7 @@ Object {
           >
             <div
               class="key-container submit-key"
-              data-testid="key-="
+              role="key"
             >
               <p
                 class="key-value"
@@ -79,7 +79,7 @@ Object {
         >
           <div
             class="key-container submit-key"
-            data-testid="key-="
+            role="key"
           >
             <p
               class="key-value"
