@@ -18,5 +18,5 @@ describe('Key', () => {
     wrapper.setProps({ keyValue: 'test' });
     expect(wrapper.text()).toEqual('test');
   });
-  
+
 });
