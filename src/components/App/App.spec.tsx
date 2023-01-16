@@ -10,9 +10,9 @@ describe('App', () => {
 
   it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
-  it('should render a div', () => {
-    const divs = screen.getAllByRole('presentation');
-    expect(divs).toHaveLength(1);
+  it('should render an App', () => {
+    const divs = screen.getByTestId('app');
+    expect(divs).toBeTruthy();
   });
 
   it('should render the Calculator Component', () => {

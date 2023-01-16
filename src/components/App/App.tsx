@@ -5,7 +5,7 @@ import Calculator from "../Calculator/Calculator";
 
 const App = () => {
   return (
-    <div role="presentation" className="app-container">
+    <div data-testid="app" role="presentation" className="app-container">
       <Calculator />
     </div>
   )

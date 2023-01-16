@@ -7,14 +7,17 @@ Object {
     <div>
       <div
         class="app-container"
+        data-testid="app"
         role="presentation"
       >
         <div
           class="calculator-container"
           data-testid="calculator"
+          role="presentation"
         >
           <div
             class="display-container"
+            data-testid="display"
           >
             <p
               class="display-value"
@@ -24,6 +27,7 @@ Object {
           </div>
           <div
             class="keypad-container"
+            data-testid="keypad"
           >
             <div
               class="numbers-container"
@@ -36,6 +40,7 @@ Object {
             >
               <div
                 class="key-container submit-key"
+                data-testid="key-="
               >
                 <p
                   class="key-value"
@@ -52,14 +57,17 @@ Object {
   "container": <div>
     <div
       class="app-container"
+      data-testid="app"
       role="presentation"
     >
       <div
         class="calculator-container"
         data-testid="calculator"
+        role="presentation"
       >
         <div
           class="display-container"
+          data-testid="display"
         >
           <p
             class="display-value"
@@ -69,6 +77,7 @@ Object {
         </div>
         <div
           class="keypad-container"
+          data-testid="keypad"
         >
           <div
             class="numbers-container"
@@ -81,6 +90,7 @@ Object {
           >
             <div
               class="key-container submit-key"
+              data-testid="key-="
             >
               <p
                 class="key-value"
