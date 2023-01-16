@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Key.css';
+
 type Props = {
   keyAction: () => void;
   keyType: string;
@@ -9,7 +11,7 @@ type Props = {
 const Key = (props: Props) => {
   const { keyAction, keyType, keyValue } = props;
   return (
-    <div className="key-container">
+    <div className={`key-container ${keyType}`}>
       <p className="key-value">
         {keyValue}
       </p>
