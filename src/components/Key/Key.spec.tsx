@@ -1,24 +1,24 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, RenderResult, screen } from '@testing-library/react'
 
 import Key from './Key';
 
 describe('Key', () => {
-  let wrapper: ShallowWrapper;
+  let wrapper: RenderResult;
 
-  beforeEach(() => {
-    wrapper = shallow(<Key keyAction={jest.fn()} keyType={''} keyValue={''} />);
-  });
+  beforeEach(() => wrapper = render(<Key keyValue="" keyAction={jest.fn()} keyType="" />));
 
   it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
-  it('should render a div', () => {
-    expect(wrapper.find('div').length).toEqual(1);
+  it('should render a Key', () => {
+    const keyComponent = screen.getByRole("key");
+    expect(keyComponent).toBeTruthy();
   });
 
-  it('should render the value of keyValue', () => {
-    wrapper.setProps({ keyValue: 'test' });
-    expect(wrapper.text()).toEqual('test');
+  it('should render the value of keyValue', async () => {
+    wrapper = render(<Key keyValue="test" keyAction={jest.fn()} keyType="" />)
+    const keys = await screen.findAllByText("test");
+    expect(keys).toHaveLength(1);
   });
 
 });
