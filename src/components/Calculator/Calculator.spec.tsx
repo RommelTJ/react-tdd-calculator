@@ -1,33 +1,26 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { render, RenderResult, screen } from '@testing-library/react'
 
 import Calculator from './Calculator';
-import Display from '../Display/Display';
-import Keypad from '../Keypad/Keypad';
+import display from "../Display/Display";
 
 describe('Calculator', () => {
-  let wrapper: ShallowWrapper<Calculator>;
+  let wrapper: RenderResult;
 
-  beforeEach(() => wrapper = shallow(<Calculator />));
+  beforeEach(() => wrapper = render(<Calculator />));
 
   it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
-  it('should render a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1);
+  it('should render a div', () => {
+    const divs = screen.getAllByRole('presentation');
+    expect(divs).toHaveLength(1);
   });
 
   it('should render the Display and Keypad Components', () => {
-    const calculatorInstance = wrapper.instance() as Calculator;
-    expect(wrapper.containsAllMatchingElements([
-      <Display displayValue={calculatorInstance.state.displayValue} />,
-      <Keypad
-        callOperator={calculatorInstance.callOperator}
-        numbers={calculatorInstance.state.numbers}
-        operators={calculatorInstance.state.operators}
-        setOperator={calculatorInstance.setOperator}
-        updateDisplay={calculatorInstance.updateDisplay}
-      />
-    ])).toEqual(true);
+    const displayComponent = screen.getByTestId('display');
+    expect(displayComponent).toBeTruthy();
+    const keypadComponent = screen.getByTestId('keypad');
+    expect(keypadComponent).toBeTruthy();
   });
 
 });

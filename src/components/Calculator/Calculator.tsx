@@ -34,7 +34,7 @@ class Calculator extends Component {
     const { displayValue, numbers, operators } = this.state;
 
     return (
-      <div className="calculator-container">
+      <div data-testid="calculator" role="presentation" className="calculator-container">
         <Display displayValue={displayValue} />
         <Keypad
           callOperator={this.callOperator}

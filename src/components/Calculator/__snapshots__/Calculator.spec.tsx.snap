@@ -1,3 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Calculator should render correctly 1`] = `ShallowWrapper {}`;
+exports[`Calculator should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="calculator-container"
+        data-testid="calculator"
+        role="presentation"
+      >
+        <div
+          class="display-container"
+          data-testid="display"
+        >
+          <p
+            class="display-value"
+          >
+            0
+          </p>
+        </div>
+        <div
+          class="keypad-container"
+          data-testid="keypad"
+        >
+          <div
+            class="numbers-container"
+          />
+          <div
+            class="operators-container"
+          />
+          <div
+            class="submit-container"
+          >
+            <div
+              class="key-container submit-key"
+              data-testid="key-="
+            >
+              <p
+                class="key-value"
+              >
+                =
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="calculator-container"
+      data-testid="calculator"
+      role="presentation"
+    >
+      <div
+        class="display-container"
+        data-testid="display"
+      >
+        <p
+          class="display-value"
+        >
+          0
+        </p>
+      </div>
+      <div
+        class="keypad-container"
+        data-testid="keypad"
+      >
+        <div
+          class="numbers-container"
+        />
+        <div
+          class="operators-container"
+        />
+        <div
+          class="submit-container"
+        >
+          <div
+            class="key-container submit-key"
+            data-testid="key-="
+          >
+            <p
+              class="key-value"
+            >
+              =
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
