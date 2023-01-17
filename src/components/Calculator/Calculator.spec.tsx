@@ -56,4 +56,60 @@ describe('Calculator', () => {
     expect(displayValue?.textContent).toBe("9");
   })
 
+  it('concatenates displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[4]); // '5'
+    await userEvent.click(numberKeys[10]); // '0'
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("50");
+  });
+
+  it('removes leading "0" from displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[10]); // '0'
+    const displayComponent = wrapper.getByTestId("display");
+    let displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("0");
+    await userEvent.click(numberKeys[4]); // '5'
+    displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("5");
+  });
+
+  it('prevents multiple leading "0"s from displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[10]); // '0'
+    await userEvent.click(numberKeys[10]); // '0'
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("0");
+  });
+
+  it('removes last char of displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[4]); // '5'
+    await userEvent.click(numberKeys[10]); // '0'
+    await userEvent.click(numberKeys[11]); // 'CE'
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("5");
+  });
+
+  it('prevents multiple instances of "." in displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[9]); // '.'
+    await userEvent.click(numberKeys[9]);
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe(".");
+  });
+
+  it('will set displayValue to "0" if displayValue is equal to an empty string', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[11]); // 'CE'
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("0");
+  });
+
 });
