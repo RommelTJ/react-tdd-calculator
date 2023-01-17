@@ -8,14 +8,14 @@ type Props = {
   numbers: string[];
   operators: string[];
   setOperator: () => void;
-  updateDisplay: () => void;
+  updateDisplay: (value: string) => void;
 }
 
 const Keypad = (props: Props) => {
   const { callOperator, numbers, operators, setOperator, updateDisplay } = props;
 
   const numberKeys = numbers.map(number => {
-    return <Key key={number} keyAction={updateDisplay} keyType="number-key" keyValue={number}/>;
+    return <Key key={number} keyAction={() => updateDisplay(number)} keyType="number-key" keyValue={number}/>;
   });
 
   const operatorKeys = operators.map(operator => {
