@@ -20,7 +20,7 @@ Object {
         >
           <div
             class="key-container submit-key"
-            role="key"
+            role="submit-key"
           >
             <p
               class="key-value"
@@ -48,7 +48,7 @@ Object {
       >
         <div
           class="key-container submit-key"
-          role="key"
+          role="submit-key"
         >
           <p
             class="key-value"

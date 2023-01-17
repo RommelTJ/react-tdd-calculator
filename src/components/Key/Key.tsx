@@ -11,7 +11,7 @@ type Props = {
 const Key = (props: Props) => {
   const { keyAction, keyType, keyValue } = props;
   return (
-    <div role="key" className={`key-container ${keyType}`}>
+    <div role={keyType} className={`key-container ${keyType}`} onClick={keyAction}>
       <p className="key-value">
         {keyValue}
       </p>

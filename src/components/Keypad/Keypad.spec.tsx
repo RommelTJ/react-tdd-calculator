@@ -45,8 +45,12 @@ describe('Keypad', () => {
         updateDisplay={jest.fn()}
       />
     );
-    const keypadComponent = screen.getAllByRole('key');
-    expect(keypadComponent).toHaveLength(keyTotal);
+    // const keypadComponent = screen.getAllByRole('number-key');
+    const numberKeys = screen.getAllByRole('number-key');
+    const operatorKeys = screen.getAllByRole('operator-key');
+    const submitKeys = screen.getAllByRole('submit-key');
+    const totalKeys = [...numberKeys, ...operatorKeys, ...submitKeys];
+    expect(totalKeys).toHaveLength(keyTotal);
   });
 
   it('renders the values of numbers to the DOM', () => {
@@ -62,10 +66,9 @@ describe('Keypad', () => {
     );
     const numbersContainer = container.querySelector('.numbers-container');
     expect(numbersContainer).toBeTruthy();
-    const keys = getAllByRole("key")
-    const submitKey = 1;
-    const expectedKeysTotal = numbers.length + submitKey;
-    expect(keys).toHaveLength(expectedKeysTotal);
+    const numberKeys = screen.getAllByRole('number-key');
+    const expectedKeysTotal = numbers.length;
+    expect(numberKeys).toHaveLength(expectedKeysTotal);
   });
 
 });

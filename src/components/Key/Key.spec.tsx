@@ -6,12 +6,12 @@ import Key from './Key';
 describe('Key', () => {
   let wrapper: RenderResult;
 
-  beforeEach(() => wrapper = render(<Key keyValue="" keyAction={jest.fn()} keyType="" />));
+  beforeEach(() => wrapper = render(<Key keyValue="" keyAction={jest.fn()} keyType="submit-key" />));
 
   it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
   it('should render a Key', () => {
-    const keyComponent = screen.getByRole("key");
+    const keyComponent = screen.getByRole("submit-key");
     expect(keyComponent).toBeTruthy();
   });
 

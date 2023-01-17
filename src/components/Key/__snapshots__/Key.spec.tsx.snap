@@ -6,8 +6,8 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="key-container "
-        role="key"
+        class="key-container submit-key"
+        role="submit-key"
       >
         <p
           class="key-value"
@@ -17,8 +17,8 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="key-container "
-      role="key"
+      class="key-container submit-key"
+      role="submit-key"
     >
       <p
         class="key-value"
