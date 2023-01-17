@@ -48,4 +48,12 @@ describe('Calculator', () => {
     expect(logSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('updates displayValue', async () => {
+    const numberKeys = wrapper.getAllByRole("number-key");
+    await userEvent.click(numberKeys[0]);
+    const displayComponent = wrapper.getByTestId("display");
+    const displayValue = displayComponent.querySelector(".display-value");
+    expect(displayValue?.textContent).toBe("9");
+  })
+
 });
