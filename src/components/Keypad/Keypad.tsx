@@ -7,7 +7,7 @@ type Props = {
   callOperator: () => void;
   numbers: string[];
   operators: string[];
-  setOperator: () => void;
+  setOperator: (value: string) => void;
   updateDisplay: (value: string) => void;
 }
 
@@ -19,7 +19,7 @@ const Keypad = (props: Props) => {
   });
 
   const operatorKeys = operators.map(operator => {
-    return <Key key={operator} keyAction={setOperator} keyType="operator-key" keyValue={operator} />;
+    return <Key key={operator} keyAction={() => setOperator(operator)} keyType="operator-key" keyValue={operator} />;
   });
 
   return (
