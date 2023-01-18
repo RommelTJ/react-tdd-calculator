@@ -122,4 +122,81 @@ describe('Calculator', () => {
     });
   });
 
+  describe("callOperator", () => {
+    it('updates displayValue to the sum of storedValue and displayValue', async () => {
+      const numberKeys = wrapper.getAllByRole("number-key");
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      const submitKey = wrapper.getByRole("submit-key");
+
+      await userEvent.click(numberKeys[6]); // '3'
+      await userEvent.click(operatorKeys[3]); // '+'
+      await userEvent.click(numberKeys[7]); // '2'
+      await userEvent.click(submitKey); // '='
+
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("5");
+    });
+
+    it('updates displayValue to the difference of storedValue and displayValue', async () => {
+      const numberKeys = wrapper.getAllByRole("number-key");
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      const submitKey = wrapper.getByRole("submit-key");
+
+      await userEvent.click(numberKeys[6]); // '3'
+      await userEvent.click(operatorKeys[2]); // '-'
+      await userEvent.click(numberKeys[7]); // '2'
+      await userEvent.click(submitKey); // '='
+
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("1");
+    });
+
+    it('updates displayValue to the product of storedValue and displayValue', async () => {
+      const numberKeys = wrapper.getAllByRole("number-key");
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      const submitKey = wrapper.getByRole("submit-key");
+
+      await userEvent.click(numberKeys[6]); // '3'
+      await userEvent.click(operatorKeys[1]); // 'x'
+      await userEvent.click(numberKeys[7]); // '2'
+      await userEvent.click(submitKey); // '='
+
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("6");
+    });
+
+    it('updates displayValue to the quotient of storedValue and displayValue', async () => {
+      const numberKeys = wrapper.getAllByRole("number-key");
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      const submitKey = wrapper.getByRole("submit-key");
+
+      await userEvent.click(numberKeys[6]); // '3'
+      await userEvent.click(operatorKeys[0]); // '/'
+      await userEvent.click(numberKeys[7]); // '2'
+      await userEvent.click(submitKey); // '='
+
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("1.5");
+    });
+
+    it('updates displayValue to "0" if operation results in "Infinity"', async () => {
+      const numberKeys = wrapper.getAllByRole("number-key");
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      const submitKey = wrapper.getByRole("submit-key");
+
+      await userEvent.click(numberKeys[6]); // '3'
+      await userEvent.click(operatorKeys[0]); // '/'
+      await userEvent.click(numberKeys[10]); // '0'
+      await userEvent.click(submitKey); // '='
+
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("0");
+    });
+  });
+
 });
