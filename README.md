@@ -36,6 +36,13 @@ Test-Driven Development (`TDD`) is a development method that utilizes repetition
   * Useful to keep yourself constrained to testing the component as a unit 
   * Avoids indirectly testing the behavior of child components
   * https://enzymejs.github.io/enzyme/docs/api/shallow.html
+* Mount Tests
+  * These do a full DOM render.
+  * Allow us to get the text values of child elements.
+  * As a rule, always use shallow tests first.
+    * Use mount when you want to test either
+      * `componentDidMount` or `componentDidUpdate`
+      * DOM rendering, component lifecycle, and the behavior of child components
 * Snapshot Testing
   * Although snapshots are not part of TDD as they are written after a component has been written 
   * Think "green-green-refactor" instead of "red-green-refactor"
