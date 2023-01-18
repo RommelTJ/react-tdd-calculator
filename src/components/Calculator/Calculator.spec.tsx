@@ -112,4 +112,14 @@ describe('Calculator', () => {
     expect(displayValue?.textContent).toBe("0");
   });
 
+  describe("setOperator", () => {
+    it('updates the value of displayValue to "0"', async () => {
+      const operatorKeys = wrapper.getAllByRole("operator-key");
+      await userEvent.click(operatorKeys[3]); // '+'
+      const displayComponent = wrapper.getByTestId("display");
+      const displayValue = displayComponent.querySelector(".display-value");
+      expect(displayValue?.textContent).toBe("0");
+    });
+  });
+
 });
