@@ -20,6 +20,41 @@ class Calculator extends Component {
 
   callOperator = () => {
     console.log('call operation');
+    let { displayValue, selectedOperator, storedValue } = this.state;
+    // temp variable for updating state storedValue
+    const updateStoredValue = displayValue;
+
+    // parse strings for operations
+    let displayValueNumber = parseInt(displayValue, 10);
+    const storedValueNumber = parseInt(storedValue, 10);
+
+    // performs selected operation
+    switch (selectedOperator) {
+      case '+':
+        displayValueNumber = storedValueNumber + displayValueNumber;
+        break;
+      case '-':
+        displayValueNumber = storedValueNumber - displayValueNumber;
+        break;
+      case 'x':
+        displayValueNumber = storedValueNumber * displayValueNumber;
+        break;
+      case '/':
+        displayValueNumber = storedValueNumber / displayValueNumber;
+        break;
+      default:
+        // set displayValue to zero if no case matches
+        displayValueNumber = 0;
+    }
+
+    // converts displayValue to a string
+    displayValue = displayValueNumber.toString();
+    // reset selectedOperator
+    selectedOperator = '';
+    // check for 'NaN' or 'Infinity', if true set displayValue to '0'
+    if (displayValue === 'NaN' || displayValue === 'Infinity') displayValue = '0';
+
+    this.setState({ displayValue, selectedOperator, storedValue: updateStoredValue });
   }
 
   setOperator = (value: string) => {
